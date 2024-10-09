@@ -1,0 +1,47 @@
+.slick-dots li.slick-active button::before {
+  color: #ff5f6d !important;
+}
+
+.slick-dots li button::before {
+  font-size: 12px;
+  color: #ff5f6d;
+}
+
+@keyframes coin-spin {
+  0% {
+    transform: rotateY(0deg);
+    filter: brightness(1);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  25% {
+    transform: rotateY(90deg) scale(1.1);
+    filter: brightness(0.8);
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.5);
+  }
+  50% {
+    transform: rotateY(180deg) scale(1);
+    filter: brightness(1);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  75% {
+    transform: rotateY(270deg) scale(1.1);
+    filter: brightness(0.8);
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.5);
+  }
+  100% {
+    transform: rotateY(360deg);
+    filter: brightness(1);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.card-spin {
+  animation: coin-spin 2s ease-in-out infinite; /* Infinite spin */
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  will-change: transform, filter, box-shadow;
+}
+
+.card-spin:hover {
+  animation-play-state: paused; /* Pause animation on hover */
+}
